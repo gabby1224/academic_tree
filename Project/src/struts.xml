@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 定义逻辑视图与物理视图之间的联系 -->
+    <package name="trio" extends="struts-default">
+    
+     <!-- 返回登录界面  -->
+        <action name="home" class="com.structs.trio.Jump" method="returnHome">
+            <result name="SUCCESS">/index.html</result>
+        </action>
+        
+     <!-- 返回个人主页  -->
+        <action name="main" class="com.structs.trio.Jump" method="returninfo">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 返回查找用户的个人主页  -->
+        <action name="mainOther" class="com.structs.trio.Jump" method="returninfoOther">
+            <result name="SUCCESS">/mainOther.html</result>
+        </action>
+        
+     <!-- 注册  -->
+        <action name="assign" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/AssignS.jsp</result>
+        </action>
+        
+     <!-- 登录  -->
+        <action name="login" class="com.structs.trio.Login_in" method="login">
+            <result name="SUCCESS">/main.html</result>
+            <result name="FALSE">/failed.jsp</result>
+        </action>
+        
+     <!-- 个人详细资料  -->
+        <action name="information" class="com.structs.trio.Information" method="infor">
+            <result name="SUCCESS">/information.jsp</result>
+        </action>
+        
+     <!-- 查找用户  -->
+        <action name="search" class="com.structs.trio.find" method="find_name">
+            <result name="SUCCESS">/mainOther.html</result>
+        </action>
+        
+     <!-- 增加老师  -->
+        <action name="addt" class="com.structs.trio.addTea" method="AddTeacher">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 增加学生  -->
+        <action name="adds" class="com.structs.trio.addStu" method="AddStudent">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 删除老师  -->
+        <action name="delt" class="com.structs.trio.delTea" method="DeleteTeacher">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 删除学生  -->
+        <action name="dels" class="com.structs.trio.delStu" method="DeleteStudent">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 师承关系  -->
+        <action name="tables" class="com.structs.trio.table" method="infortable">
+            <result name="SUCCESS">/tableshow.jsp</result>
+        </action>
+        
+     <!-- 师承树  -->
+        <action name="tree">
+            <result>/tree.jsp</result>
+        </action>
+        
+     <!-- 查找到的用户的个人详细资料  -->
+        <action name="informationOther" class="com.structs.trio.InformationOther" method="infor">
+            <result name="SUCCESS">/informationOther.jsp</result>
+        </action>
+        
+     <!-- 查找到的用户增加老师  -->
+        <action name="addtOther" class="com.structs.trio.addTeaOther" method="AddTeacher">
+            <result name="SUCCESS">/mainOther.html</result>
+        </action>
+        
+     <!-- 查找到的用户增加学生  -->
+        <action name="addsOther" class="com.structs.trio.addStuOther" method="AddStudent">
+            <result name="SUCCESS">/mainOther.html</result>
+        </action>
+        
+     <!-- 查找到的用户删除老师  -->
+        <action name="deltOther" class="com.structs.trio.delTeaOther" method="DeleteTeacher">
+            <result name="SUCCESS">/mainOther.html</result>
+        </action>
+        
+     <!-- 查找到的用户删除学生  -->
+        <action name="delsOther" class="com.structs.trio.delStuOther" method="DeleteStudent">
+            <result name="SUCCESS">/mainOther.html</result>
+        </action>
+     
+     <!-- 查找到的用户的师承关系  -->
+        <action name="tableOther" class="com.structs.trio.tableOther" method="infortable">
+            <result name="SUCCESS">/tableshowOther.jsp</result>
+        </action>
+        
+     <!-- 查找到的用户的师承树  -->
+        <action name="treeOther">
+            <result>/treeOther.jsp</result>
+        </action>
+                  
+    </package>
+</struts>
+
+
