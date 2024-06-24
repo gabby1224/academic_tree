@@ -3,6 +3,7 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <!-- 定义逻辑视图与物理视图之间的联系 -->
     <package name="trio" extends="struts-default">
     
@@ -37,28 +38,53 @@
             <result name="SUCCESS">/information.jsp</result>
         </action>
         
+     <!-- 进入确认页面  -->
+        <action name="check">
+            <result>/check.jsp</result>
+        </action>
+        
      <!-- 查找用户  -->
         <action name="search" class="com.structs.trio.find" method="find_name">
             <result name="SUCCESS">/mainOther.html</result>
         </action>
         
      <!-- 增加老师  -->
-        <action name="addt" class="com.structs.trio.addTea" method="AddTeacher">
+        <action name="addt" class="com.structs.trio.addTea" method="Add_T_toquery">
             <result name="SUCCESS">/main.html</result>
         </action>
         
      <!-- 增加学生  -->
-        <action name="adds" class="com.structs.trio.addStu" method="AddStudent">
+        <action name="adds" class="com.structs.trio.addStu" method="Add_S_toquery">
             <result name="SUCCESS">/main.html</result>
         </action>
         
      <!-- 删除老师  -->
-        <action name="delt" class="com.structs.trio.delTea" method="DeleteTeacher">
+        <action name="delt" class="com.structs.trio.delTea" method="del_t_query">
             <result name="SUCCESS">/main.html</result>
         </action>
         
      <!-- 删除学生  -->
-        <action name="dels" class="com.structs.trio.delStu" method="DeleteStudent">
+        <action name="dels" class="com.structs.trio.delStu" method="del_s_query">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 确认增加老师  -->
+        <action name="ackaddt" class="com.structs.trio.addTea" method="T_ack">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 确认增加学生  -->
+        <action name="ackadds" class="com.structs.trio.addStu" method="S_ack">
+            <result>/main.jsp</result>
+        </action>
+        
+     <!-- 确认删除老师  -->
+        <action name="ackdelt" class="com.structs.trio.delTea" method="Dt_ack">
+            <result name="SUCCESS">/main.html</result>
+        </action>
+        
+     <!-- 确认删除学生  -->
+        <action name="ackdels" class="com.structs.trio.delStu" method="Ds_ack">
             <result name="SUCCESS">/main.html</result>
         </action>
         
@@ -106,7 +132,7 @@
         <action name="treeOther">
             <result>/treeOther.jsp</result>
         </action>
-                  
+                          
     </package>
 </struts>
 

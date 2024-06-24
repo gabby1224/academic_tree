@@ -126,6 +126,7 @@
 	</table>
 	</table>
 	</div>
+
     <div>
     <form action="main" method="post">
       <div class="register w3layouts agileits send-button w3layouts agileits c">

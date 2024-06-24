@@ -14,19 +14,51 @@ import database.MySQLConnecter;
 public class addStu
 {
 	private String student;
+	private String project;
 	private String studentStartTime;
 	private String studentOverTime;
-	private String project;
-	
-	public String AddStudent() 
+/*
+	public String getStudent() {
+		return this.student;
+	}
+
+	public void setStudent(String student) {
+		this.student = student;
+	}
+
+	public String getStudentStartTime() {
+		return this.studentStartTime;
+	}
+
+	public void setStudentStartTime(String studentStartTime) {
+		this.student = studentStartTime;
+	}
+
+	public String getStudentOverTime() {
+		return this.studentOverTime;
+	}
+
+	public void setStudentOverTime(String studentOverTime) {
+		this.studentOverTime = studentOverTime;
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+	}
+	*/
+	public String AddStudent(String student, String studentStartTime, String studentOverTime, String project)
 	{
-		ServletRequest request = ServletActionContext.getRequest();
-		HttpServletRequest req = (HttpServletRequest) request;
-		HttpSession session = req.getSession();
-		student = request.getParameter("student");
-		studentStartTime = request.getParameter("studentStartTime");
-		studentOverTime = request.getParameter("studentOverTime");
-		project = request.getParameter("project");
+//		ServletRequest request = ServletActionContext.getRequest();
+//		HttpServletRequest req = (HttpServletRequest) request;
+//		HttpSession session = req.getSession();
+//		student = request.getParameter("student");
+//		studentStartTime = request.getParameter("studentStartTime");
+//		studentOverTime = request.getParameter("studentOverTime");
+//		project = request.getParameter("project");
 		
 		String sql0 = "select * from " + Login_in.name + " where student=" + "\"" + student + "\"" + ";";
 		MySQLConnecter mc = new MySQLConnecter();
@@ -56,4 +88,63 @@ public class addStu
 		}
 		return "SUCCESS";
 	}
+
+
+	public String Add_S_toquery()
+	{
+		//接受到 http 请求, 该用户要添加学生，先存下来发送给对方确认
+		//数据库中将消息存到对方的‘申请你为学生’表中
+		ServletRequest request = ServletActionContext.getRequest();
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpSession session = req.getSession();
+		student = request.getParameter("student");
+		studentStartTime = request.getParameter("studentStartTime");
+		studentOverTime = request.getParameter("studentOverTime");
+		project = request.getParameter("project");
+
+		MySQLConnecter mc = new MySQLConnecter();
+		// 如果消息表不存在则创建一个消息表，用来存储提交的add消息
+		// 创建教师表
+		String createTeacherTableSql = "CREATE TABLE IF NOT EXISTS " + student + "_ADDs_message (teacher VARCHAR(20), studentStartTime VARCHAR(20), studentOverTime VARCHAR(20), project VARCHAR(20))";
+		try{
+			mc.update(createTeacherTableSql);
+		}
+		catch(Exception e){
+			return "False";
+		}
+
+		// 将信息插入到数据库中
+		String sql = "INSERT INTO " + student + "_ADDs_message (teacher, studentStartTime, studentOverTime, project) VALUES ('" +
+				Login_in.name + "', '" + studentStartTime + "', '" + studentOverTime + "', '" + project + "')";
+		mc.insert(sql); // 执行插入操作
+		return "SUCCESS";
+	}
+
+	public void S_ack()
+	{
+		/*
+		// 被我添加的学生点击确认消息，调用此函数添加对方为我的学生，且去掉他消息队列中的消息， 注意这里要给一个 student 的参数
+		String sql = "SELECT * FROM " + getStudent() + "_ADDs_message" + " where teacher=" + "\"" + Login_in.name + "\"" + ";";
+		MySQLConnecter mc = new MySQLConnecter();
+		ArrayList<Map<String, String>> result1 = mc.select(sql, getStudent() + "_ADDs_message");
+		
+		ServletRequest request = ServletActionContext.getRequest();
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpSession session = req.getSession();
+		session.setAttribute("S_ack_list", result1);
+		
+		if (result1.size() == 0) {
+			//return "FALSE";
+			return;
+		}
+		String studentStartTime = result1.get(0).get("studentStartTime");
+		String studentOverTime = result1.get(0).get("studentOverTime");
+		String project = result1.get(0).get("project");
+		AddStudent(getStudent(), studentStartTime, studentOverTime, project);
+		String delsql = "delete from " + getStudent() + "_ADDs_message  where teacher =" + "\"" + Login_in.name + "\"" + ";";
+		MySQLConnecter mc2 = new MySQLConnecter();
+		mc2.update(delsql);
+		*/
+	}
 }
+
