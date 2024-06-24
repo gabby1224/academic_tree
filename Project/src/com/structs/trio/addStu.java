@@ -14,9 +14,41 @@ import database.MySQLConnecter;
 public class addStu
 {
 	private String student;
+	private String project;
 	private String studentStartTime;
 	private String studentOverTime;
-	private String project;
+
+	public String getStudent() {
+		return this.student;
+	}
+
+	public void setStudent(String student) {
+		this.student = student;
+	}
+
+	public String getStudentStartTime() {
+		return this.studentStartTime;
+	}
+
+	public void setStudentStartTime(String studentStartTime) {
+		this.student = studentStartTime;
+	}
+
+	public String getStudentOverTime() {
+		return this.studentOverTime;
+	}
+
+	public void setStudentOverTime(String studentOverTime) {
+		this.studentOverTime = studentOverTime;
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+	}
 	
 	public String AddStudent(String student, String studentStartTime, String studentOverTime, String project)
 	{
@@ -88,12 +120,12 @@ public class addStu
 		return "SUCCESS";
 	}
 
-	public void S_ack(String student)
+	public void S_ack()
 	{
 		// 被我添加的学生点击确认消息，调用此函数添加对方为我的学生，且去掉他消息队列中的消息， 注意这里要给一个 student 的参数
-		String sql = "SELECT * FROM " + student + "_ADDs_message" + " where teacher=" + "\"" + Login_in.name + "\"" + ";";
+		String sql = "SELECT * FROM " + getStudent() + "_ADDs_message" + " where teacher=" + "\"" + Login_in.name + "\"" + ";";
 		MySQLConnecter mc = new MySQLConnecter();
-		ArrayList<Map<String, String>> result1 = mc.select(sql, student + "_ADDs_message");
+		ArrayList<Map<String, String>> result1 = mc.select(sql, getStudent() + "_ADDs_message");
 		if (result1.size() == 0) {
 			//return "FALSE";
 			return;
@@ -101,10 +133,10 @@ public class addStu
 		String studentStartTime = result1.get(0).get("studentStartTime");
 		String studentOverTime = result1.get(0).get("studentOverTime");
 		String project = result1.get(0).get("project");
-		AddStudent(student, studentStartTime, studentOverTime, project);
-
-		String delsql = "delete from " + student + "_ADDs_message  where teacher =" + "\"" + Login_in.name + "\"" + ";";
+		AddStudent(getStudent(), studentStartTime, studentOverTime, project);
+		String delsql = "delete from " + getStudent() + "_ADDs_message  where teacher =" + "\"" + Login_in.name + "\"" + ";";
 		MySQLConnecter mc2 = new MySQLConnecter();
 		mc2.update(delsql);
 	}
 }
+
