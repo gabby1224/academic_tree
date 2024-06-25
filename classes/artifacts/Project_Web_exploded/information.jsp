@@ -45,7 +45,7 @@
 	<table width="500px" style="border:1px;" align="center" cellspacing="1" cellpadding="1">
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list11 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list11 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list11.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\">" + "<font size=6>" + list11.get(0).get("name")+ "</font>" + "</th>");
 			}else {
@@ -55,7 +55,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list12 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list12 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list12.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list12.get(0).get("sex")+ "</font></th>");
 			}else {
@@ -65,7 +65,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list13 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list13 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list13.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list13.get(0).get("birthday")+ "</font></th>");
 			}else {
@@ -75,7 +75,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list14 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list14 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list14.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list14.get(0).get("phone")+ "</font></th>");
 			}else {
@@ -85,7 +85,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list15 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list15 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list15.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list15.get(0).get("email")+ "</font></th>");
 			}else {
@@ -95,7 +95,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list16 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list16 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list16.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list16.get(0).get("graduated_school")+ "</font></th>");
 			}else {
@@ -105,7 +105,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list17 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list17 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list17.size() > 0) {
 				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list17.get(0).get("company")+ "</font></th>");
 			}else {
@@ -115,7 +115,7 @@
 		</tr>
 		<tr>
 			<%
-			ArrayList<Map<String, String>> list18 = (ArrayList<Map<String, String>>) session.getAttribute("inforlistOther");
+			ArrayList<Map<String, String>> list18 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
 			if (list18.size() > 0) {
 				out.print("<th style=\"color:#FF0000;\" height=\"50px\">" + "<a href = " + list18.get(0).get("CSDN_add") + ">" + "<font size=6>" + list17.get(0).get("CSDN_add")+ "</font></th>");
 			}else {
@@ -126,12 +126,13 @@
 	</table>
 	</table>
 	</div>
+
     <div>
-		<form action="main" method="post">
-			<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed bc">
-				<input type="submit" value="返回主页">
-			</div>
-		</form>
+    <form action="main" method="post">
+      <div class="register w3layouts agileits send-button w3layouts agileits c">
+      	<input type="submit" value="返回个人主页">
+      </div>
+    </form>
     <div class="clear"></div>
   </div>
 </body>

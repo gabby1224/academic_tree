@@ -9,12 +9,6 @@
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <link rel="stylesheet" type="text/css" href="css/content.css" />
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-    <style>
-        .center-button {
-            display: block;
-            margin: 20px auto; /* 上下外边距20px，左右自动 */
-        }
-    </style>
 </head>
 <body style="background: url(images/background.png)">
 <body>
@@ -30,7 +24,7 @@
 			<th style="color:#FFFFFF;" height="50px"><font size=5>所授科目</font></th>
 		</tr>
 		<%
-			ArrayList<Map<String, String>> list2 = (ArrayList<Map<String, String>>) session.getAttribute("teacherlist");
+			ArrayList<Map<String, String>> list2 = (ArrayList<Map<String, String>>) session.getAttribute("teacherlistOther");
 			if (list2.size() > 0) 
 			{
 				for (int i=0; i < list2.size();i++)
@@ -69,7 +63,7 @@
 			<th style="color:#FFFFFF;" height="50px"><font size=5>所学科目</font></th>
 		</tr>
 		<%
-			ArrayList<Map<String, String>> list1 = (ArrayList<Map<String, String>>) session.getAttribute("studentlist");
+			ArrayList<Map<String, String>> list1 = (ArrayList<Map<String, String>>) session.getAttribute("studentlistOther");
 			if (list1.size() > 0) 
 			{
 				for (int i=0; i < list1.size();i++)
@@ -95,13 +89,13 @@
 		%>
 		</table>
 	</div>
-	<div>
-		<form action="main" method="post">
-			<div class="register w3layouts agileits send-button w3layouts agileits c">
-				<input type="submit" value="返回个人主页">
-			</div>
-		</form>
-		<div class="clear"></div>
+			<div>
+    <form action="mainOther" method="post">
+      <div class="register w3layouts agileits send-button w3layouts agileits c">
+      	<input type="submit" value="返回主页">
+      </div>
+    </form>
+    <div class="clear"></div>
   </div>
 </body>
 </body>

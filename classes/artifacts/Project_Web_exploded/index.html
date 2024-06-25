@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>学术关系管理系统</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- 引入外部字体 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff6f61;
+      margin-top: 50px;
+      font-size: 36px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #ff6f61;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .send-button input[type="submit"] {
+      width: 100%;
+      background-color: #ff6f61;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .send-button input[type="submit"]:hover {
+      background-color: #ff8c7f;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>欢迎使用学术关系管理系统</h1>
+  <div class="container">
+    <div class="login">
+      <h2>登 录</h2>
+      <form action="login" method="post">
+        <input type="text" Name="name" placeholder="用户名" required="">
+        <input type="password" Name="password" placeholder="密码" required="">
+        <div class="send-button">
+          <input type="submit" value="登 录">
+        </div>
+      </form>
+      <div class="clear"></div>
+    </div>
+    <div class="register">
+      <h2>注 册</h2>
+      <form action="assign" method="post">
+        <input type="text" Name="name" placeholder="用户名" required="">
+        <input type="text" Name="sex" placeholder="性别" required="">
+        <input type="text" Name="birthday" placeholder="生日(XXXX-XX-XX)" required="">
+        <input type="text" Name="phone" placeholder="手机号码" required="">
+        <input type="text" Name="email" placeholder="电子邮箱" required="">
+        <input type="text" Name="graduated_school" placeholder="毕业学校" required="">
+        <input type="text" Name="company" placeholder="工作单位" required="">
+        <input type="text" Name="CSDN_add" placeholder="个人主页" required="">
+        <input type="text" Name="password" placeholder="密码" required="">
+        <div class="send-button">
+          <input type="submit" value="注册">
+        </div>
+      </form>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="footer">
+    <p>&copy; 版权所有 俺们仨</p>
+  </div>
+</body>
+
+</html>
