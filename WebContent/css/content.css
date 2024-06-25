@@ -92,7 +92,7 @@
 
 .content-style-text label {
     padding: 10px;
-    color: #f9e1c9;
+    color: rgb(128, 64, 64), 128, 255);
     font-weight: bold;
 }
 

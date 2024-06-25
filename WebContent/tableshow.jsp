@@ -9,6 +9,12 @@
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <link rel="stylesheet" type="text/css" href="css/content.css" />
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <style>
+        .center-button {
+            display: block;
+            margin: 20px auto; /* 上下外边距20px，左右自动 */
+        }
+    </style>
 </head>
 <body style="background: url(images/background.png)">
 <body>
@@ -89,10 +95,17 @@
 		%>
 		</table>
 	</div>
+		
+
 		<div>
     <form action="main" method="post">
       <div class="register w3layouts agileits send-button w3layouts agileits c">
-      	<input type="submit" value="返回主页">
+      <br>
+	<br>
+	<br>
+	<br>
+      	<input type="submit" value="返回登录界面" class="center-button">
+
       </div>
     </form>
     <div class="clear"></div>

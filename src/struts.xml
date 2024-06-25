@@ -39,8 +39,8 @@
         </action>
         
      <!-- 进入确认页面  -->
-        <action name="check">
-            <result>/check.jsp</result>
+        <action name="check" class="com.structs.trio.messageshow" method="infortable">
+            <result name="SUCCESS">/check.jsp</result>
         </action>
         
      <!-- 查找用户  -->
@@ -59,12 +59,12 @@
         </action>
         
      <!-- 删除老师  -->
-        <action name="delt" class="com.structs.trio.delTea" method="del_t_query">
+        <action name="delt" class="com.structs.trio.delTea" method="DeleteTeacher">
             <result name="SUCCESS">/main.html</result>
         </action>
         
      <!-- 删除学生  -->
-        <action name="dels" class="com.structs.trio.delStu" method="del_s_query">
+        <action name="dels" class="com.structs.trio.delStu" method="DeleteStudent">
             <result name="SUCCESS">/main.html</result>
         </action>
         
@@ -75,16 +75,6 @@
         
      <!-- 确认增加学生  -->
         <action name="ackadds" class="com.structs.trio.addStu" method="S_ack">
-            <result>/main.jsp</result>
-        </action>
-        
-     <!-- 确认删除老师  -->
-        <action name="ackdelt" class="com.structs.trio.delTea" method="Dt_ack">
-            <result name="SUCCESS">/main.html</result>
-        </action>
-        
-     <!-- 确认删除学生  -->
-        <action name="ackdels" class="com.structs.trio.delStu" method="Ds_ack">
             <result name="SUCCESS">/main.html</result>
         </action>
         
@@ -131,6 +121,11 @@
      <!-- 查找到的用户的师承树  -->
         <action name="treeOther">
             <result>/treeOther.jsp</result>
+        </action>
+        
+     <!-- 查看消息队列  -->
+        <action name="message" class="com.structs.trio.messageshow" method="infortable">
+            <result>/check.jsp</result>
         </action>
                           
     </package>

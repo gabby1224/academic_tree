@@ -4,15 +4,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>确认消息列表</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<style>
+
+        .button-container {
+        display: flex;
+        justify-content: center; /* 居中对齐 */
+        gap: 200px; /* 按钮之间的间距 */
+        margin-top: 20px; /* 按需调整顶部外边距 */
+    }
+        .send-button {
+            flex: 1; /* 按钮宽度自动调整 */
+            padding: 10px 20px; /* 按钮内边距 */
+        }
+    </style>
+    
 </head>
 <body style="background: url(images/background.png)">
-    <h1>确认消息列表</h1>
-    <br>
-    <br>
+
+  
 <div class="list-container">
-	<form action="ackadds" method="post">
+	<form action="message" method="post">
+	<div class="d3">
+		<h1>学生消息列表</h1>
+	</div>  
         <table width="100%" style="border:1px solid #FFFFFF;" align="center" cellspacing="1" cellpadding="1">
             <tr>
                 <th style="color:#FFFFFF;" height="50px"><font size=6>姓名</font></th>
@@ -22,41 +37,83 @@
             </tr>
             
             <%
-            List<Map<String, String>> S_ack_list = (List<Map<String, String>>) session.getAttribute("S_ack_list");
-            if (S_ack_list != null && !S_ack_list.isEmpty()) {
-                for (Map<String, String> message : S_ack_list) {
-                    String teacher = message.get("teacher");
-                    String studentStartTime = message.get("studentStartTime");
-                    String studentOverTime = message.get("studentOverTime");
-                    String project = message.get("project");
-            %>
-            <tr>
-                <td style="color:#FFFFFF;" height="50px"><font size=6><%= teacher %></font></td>
-                <td style="color:#FFFFFF;" height="50px"><font size=6><%= studentStartTime %></font></td>
-                <td style="color:#FFFFFF;" height="50px"><font size=6><%= studentOverTime %></font></td>
-                <td style="color:#FFFFFF;" height="50px"><font size=6><%= project %></font></td>
-                <td style="color:#FFFFFF;" height="50px">
-
-                        <input type="hidden" name="teacher" value="<%= teacher %>">
-                        <input type="hidden" name="project" value="<%= project %>">
-                        <input type="hidden" name="startTime" value="<%= studentStartTime %>">
-                        <input type="hidden" name="endTime" value="<%= studentOverTime %>">
-                        <input type="submit" value="确认">
-                    
-                </td>
-            </tr>
-            <%
-                }
-            } else {
-            %>
-            <tr>
-                <td colspan="6" style="color:#FFFFFF;" height="50px"><font size=6>暂无数据</font></td>
-            </tr>
-            <%
-            }
-            %>
+			ArrayList<Map<String, String>> list2 = (ArrayList<Map<String, String>>) session.getAttribute("applying_stu");
+			if (list2.size() > 0) 
+			{
+				for (int i=0; i < list2.size();i++)
+				{
+					if (list2.get(i).get("teacher") != null)
+						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("teacher") + "</td>\n");
+					else
+						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
+					if (list2.get(i).get("studentStartTime") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("studentStartTime") + "</td>\n");
+					else
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
+					if (list2.get(i).get("studentOverTime") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("studentOverTime") + "</td>\n");
+					else
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
+					if (list2.get(i).get("project") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + list2.get(i).get("project") + "</td></tr>\n");
+					else
+						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + " " + "</td></tr>\n");
+				}
+			}
+		%>
         </table>
+        
+        <div class="d3">
+		<h1>老师消息列表</h1>
+	</div>  
+        
+        <table width="100%" style="border:1px solid #FFFFFF;" align="center" cellspacing="1" cellpadding="1">
+            <tr>
+                <th style="color:#FFFFFF;" height="50px"><font size=6>姓名</font></th>
+                <th style="color:#FFFFFF;" height="50px"><font size=6>开始时间</font></th>
+                <th style="color:#FFFFFF;" height="50px"><font size=6>结束时间</font></th>
+                <th style="color:#FFFFFF;" height="50px"><font size=6>学科</font></th>
+            </tr>
+            
+            <%
+			ArrayList<Map<String, String>> list3 = (ArrayList<Map<String, String>>) session.getAttribute("applying_teacher");
+			if (list2.size() > 0) 
+			{
+				for (int i=0; i < list2.size();i++)
+				{
+					if (list2.get(i).get("teacher") != null)
+						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("teacher") + "</td>\n");
+					else
+						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
+					if (list2.get(i).get("teacherStartTime") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("studentStartTime") + "</td>\n");
+					else
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
+					if (list2.get(i).get("teacherOverTime") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("studentOverTime") + "</td>\n");
+					else
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
+					if (list2.get(i).get("project") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + list2.get(i).get("project") + "</td></tr>\n");
+					else
+						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + " " + "</td></tr>\n");
+				}
+			}
+		%>
+        </table>
+   </form>
+
+        </div>   
+
+
+    <div class="button-container">
+        <form action="ackadds" method="post">
+            <input type="submit" value="点击确认学生" class="send-button">
         </form>
-    </div>  
+        <form action="ackaddse" method="post">
+            <input type="submit" value="点击确认老师" class="send-button">
+        </form>
+    </div>
+  
 </body>
 </html>
