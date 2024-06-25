@@ -10,6 +10,23 @@
 		<link rel="stylesheet" type="text/css" href="css/content.css" />
 
 		<script src="js/modernizr.custom.js"></script>
+		<style>
+		.bo {
+    display: flex;
+    justify-content: center;
+}
+
+.bo input[type="submit"] {
+    padding: 1em;
+    border: none;
+    background: #e75854;
+    color: #f9f6e5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+		</style>
 	</head>
 	<body style="background: url(images/background.png)">
 	    <div class="mockup-content">
@@ -197,7 +214,7 @@ function acknowledgeRequest(name) {
 										<div>
 											<label>搜索用户</label><input type="text" name="findname"/>
 										</div>
-										<br>
+										
 										<div class="bo">
 											<input type="submit" value="查找" />
 										</div>

@@ -92,7 +92,7 @@
 
 .content-style-text label {
     padding: 10px;
-    color: rgb(128, 64, 64), 128, 255);
+    color: rgb(128, 64, 64);
     font-weight: bold;
 }
 
@@ -216,6 +216,30 @@
 	opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
+}
+
+.content-style-form-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bo input[type="submit"] {
+    padding: 1em;
+    border: none;
+    background: #e75854;
+    color: #f9f6e5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.25em;
+    justify-content: center;
 }
 
 .js .content-style-form-2 h2,
