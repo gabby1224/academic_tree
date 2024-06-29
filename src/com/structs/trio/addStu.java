@@ -50,11 +50,11 @@ public class addStu
 		ArrayList<Map<String, String>> result1 = newc1.select(sql1, "information");
 		if (result1.size() != 0) 
 		{
-			MySQLConnecter newc2 = new MySQLConnecter();
+			//MySQLConnecter newc2 = new MySQLConnecter();
 			String sql3 = "insert into " + student + "的老师" + " values(" + 
 					"\"" + teacher  + "\"" + "," + "\"" + studentStartTime  + "\"" + ","
 					+ "\"" + studentOverTime  + "\"" + "\"" + project  + "\"" + ");";
-			int number = newc2.insert(sql3);
+			int number = newc.update(sql3);
 			if (number == 0)
 				return "FALSE";
 		}

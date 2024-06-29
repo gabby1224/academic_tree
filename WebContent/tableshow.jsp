@@ -95,20 +95,13 @@
 		%>
 		</table>
 	</div>
-		
-
-		<div>
-    <form action="main" method="post">
-      <div class="register w3layouts agileits send-button w3layouts agileits c">
-      <br>
-	<br>
-	<br>
-	<br>
-      	<input type="submit" value="返回登录界面" class="center-button">
-
-      </div>
-    </form>
-    <div class="clear"></div>
+	<div>
+		<form action="main" method="post">
+			<div class="register w3layouts agileits send-button w3layouts agileits c">
+				<input type="submit" value="返回个人主页">
+			</div>
+		</form>
+		<div class="clear"></div>
   </div>
 </body>
 </body>

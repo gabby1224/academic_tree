@@ -32,9 +32,9 @@ public class delTea
 		
 		if (result2.size() != 0) {
 			String sql4 = "delete from " + teacher + "的学生  where student =" + "\"" + Login_in.name + "\"" + ";";
-			int num = newc.update(sql4);
-			if (num == 0)
-				return"FALSE";
+			//int num = newc.update(sql4);
+			//if (num == 0)
+				//return"FALSE";
 		}
 		return "SUCCESS";
 	}

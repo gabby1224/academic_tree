@@ -32,9 +32,9 @@ public class delStu
 		
 		if (result1.size() != 0) {
 			String sql3 = "delete from " + student + "的老师  where teacher =" + "\"" + Login_in.name + "\"" + ";";
-			int num = newc.update(sql3);
-			if (num == 0)
-				return "FALSE";
+			//int num = newc.update(sql3);
+			//if (num == 0)
+				//return "FALSE";
 		}
 		return "SUCCESS";
 	}

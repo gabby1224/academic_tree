@@ -28,6 +28,26 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* 悬停时增加阴影效果 */
 }
 
+.bc input[type="submit"] {
+	position: relative;
+	padding: 0 2em; /* 增加内边距 */
+	border: 2px solid #555; /* 添加复杂的边框 */
+	background-color: rgba(255, 255, 255, 0.53); /* 更改背景色为正式的蓝色 */
+	color: #333; /* 更改文字颜色为黑色 */
+	letter-spacing: 1.5px; /* 增加字符间距 */
+	font-weight: 700; /* 增加字重 */
+	line-height: 60px; /* 增加行高 */
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+	width: 150px; /* 增大按钮宽度 */
+	height: 60px; /* 增大按钮高度 */
+	font-size: 1.2em; /* 增加字体大小 */
+	text-transform: uppercase; /* 将文字转换为大写 */
+	border-radius: 10px; /* 添加圆角边框 */
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+	transition: all 0.3s ease; /* 添加过渡效果 */
+}
 
 .bo input{
 	width: 360px;
@@ -36,6 +56,56 @@
 	background: rgb(128, 128, 255);
 	border: 1px solid #000000;
 	float: left
+}
+
+.content-style-form {
+	display: flex; /* 使用flex布局 */
+	flex-direction: column; /* 垂直排列子元素 */
+	align-items: flex-start; /* 左对齐 */
+}
+/* 设置表单组的样式 */
+.form-group {
+	display: flex; /* 使用flex布局 */
+	align-items: center; /* 垂直居中 */
+	margin-bottom: 10px; /* 下边距 */
+}
+/* 设置标签的右边距 */
+.form-group label {
+	margin-left: 40px; /* 右边距 */
+	margin-bottom: 20px; /* 底部边距 */
+	width: 80px; /* 自定义宽度 */
+}
+/* 设置文本输入框的样式，包含自定义边距和宽度 */
+.form-group input[type="text"] {
+	margin-left: 10px; /* 左边距 */
+	margin-bottom: 20px; /* 底部边距 */
+	width: 300px; /* 自定义宽度 */
+}
+/* 设置提交按钮容器的样式 */
+.form-group .morph-button {
+	margin-left: 40px; /* 左边距 */
+	margin-bottom: 20px; /* 底部边距 */
+}
+/* 设置按钮容器的上边距 */
+.form-group input[type="submit"] {
+	position: relative;
+	padding: 0 2em; /* 增加内边距 */
+	border: 2px solid #555; /* 添加复杂的边框 */
+	background-color: rgb(162, 128, 238); /* 更改背景色为正式的蓝色 */
+	color: #fcfafa; /* 更改文字颜色为黑色 */
+	letter-spacing: 1.5px; /* 增加字符间距 */
+	font-weight: 700; /* 增加字重 */
+	line-height: 50px; /* 增加行高 */
+	overflow: hidden;
+	display: block;
+	margin-left: 40px; /* 左边距 */
+	margin-bottom: 20px; /* 底部边距 */
+	width: 150px; /* 增大按钮宽度 */
+	height: 50px; /* 增大按钮高度 */
+	font-size: 1.2em; /* 增加字体大小 */
+	border-radius: 10px; /* 添加圆角边框 */
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+	transition: all 0.3s ease; /* 添加过渡效果 */
 }
 
 .morph-button {

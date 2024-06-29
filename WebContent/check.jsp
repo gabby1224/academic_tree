@@ -77,24 +77,24 @@
             
             <%
 			ArrayList<Map<String, String>> list3 = (ArrayList<Map<String, String>>) session.getAttribute("applying_teacher");
-			if (list2.size() > 0) 
+			if (list3.size() > 0) 
 			{
-				for (int i=0; i < list2.size();i++)
+				for (int i=0; i < list3.size();i++)
 				{
-					if (list2.get(i).get("teacher") != null)
-						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("teacher") + "</td>\n");
+					if (list3.get(i).get("teacher") != null)
+						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + list3.get(i).get("teacher") + "</td>\n");
 					else
 						out.print("<tr align=\"center\"><td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
-					if (list2.get(i).get("teacherStartTime") != null)
-						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("studentStartTime") + "</td>\n");
+					if (list3.get(i).get("teacherStartTime") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list3.get(i).get("studentStartTime") + "</td>\n");
 					else
 						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
-					if (list2.get(i).get("teacherOverTime") != null)
-						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list2.get(i).get("studentOverTime") + "</td>\n");
+					if (list3.get(i).get("teacherOverTime") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + list3.get(i).get("studentOverTime") + "</td>\n");
 					else
 						out.print("<td style=\"color:#FFFFFF;\" height=\"40px\">" + " " + "</td>\n");
-					if (list2.get(i).get("project") != null)
-						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + list2.get(i).get("project") + "</td></tr>\n");
+					if (list3.get(i).get("project") != null)
+						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + list3.get(i).get("project") + "</td></tr>\n");
 					else
 						out.print("<td style=\"color:#FFFFFF;\" height=\"50px\">" + " " + "</td></tr>\n");
 				}
@@ -110,10 +110,15 @@
         <form action="ackadds" method="post">
             <input type="submit" value="点击确认学生" class="send-button">
         </form>
-        <form action="ackaddse" method="post">
+        <form action="ackadds" method="post">
             <input type="submit" value="点击确认老师" class="send-button">
         </form>
     </div>
+<form action="main" method="post">
+	<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed bc">
+		<input type="submit" value="返回主页">
+	</div>
+</form>
   
 </body>
 </html>

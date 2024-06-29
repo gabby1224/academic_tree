@@ -127,11 +127,11 @@
 	</table>
 	</div>
     <div>
-    <form action="mainOther" method="post">
-      <div class="register w3layouts agileits send-button w3layouts agileits c">
-      	<input type="submit" value="返回个人主页">
-      </div>
-    </form>
+		<form action="main" method="post">
+			<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed bc">
+				<input type="submit" value="返回主页">
+			</div>
+		</form>
     <div class="clear"></div>
   </div>
 </body>

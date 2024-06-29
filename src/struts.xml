@@ -49,7 +49,7 @@
         </action>
         
      <!-- 增加老师  -->
-        <action name="addt" class="com.structs.trio.addTea" method="Add_T_toquery">
+        <action name="addt" class="com.structs.trio.addTea" method="AddTeacher">
             <result name="SUCCESS">/main.html</result>
         </action>
         
